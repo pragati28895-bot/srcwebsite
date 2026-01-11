@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery – SRP GLOBAL Pvt Ltd</title>
+    <meta name="description" content="Photo gallery of SRP GLOBAL Pvt Ltd – office, tour, bus, hotel and event photos.">
+    <style>
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.6; color:#222; background:#f4f4f8; background-image: radial-gradient(circle at 10% 20%, rgba(0, 91, 255, 0.03) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba(255, 204, 51, 0.04) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(230, 57, 70, 0.02) 0%, transparent 70%); background-attachment: fixed; }
+        a { text-decoration:none; color:inherit; }
+        header { background:linear-gradient(135deg,#004aad,#0099ff); color:#fff; padding:16px 0; position:sticky; top:0; z-index:10; }
+        .container { max-width:1100px; margin:0 auto; padding:0 16px; }
+        .nav { display:flex; justify-content:space-between; align-items:center; }
+        .logo-text { font-weight:700; font-size:1.1rem; letter-spacing:0.05em; }
+        .logo-text span { font-weight:400; font-size:0.85rem; display:block; }
+        nav ul { list-style:none; display:flex; gap:16px; font-size:0.9rem; }
+        nav li a { padding:6px 10px; border-radius:4px; transition:background 0.2s ease; }
+        nav li a:hover { background:rgba(255,255,255,0.15); }
+        main { padding:32px 0 40px; }
+        h1 { font-size:1.7rem; color:#004aad; margin-bottom:8px; }
+        p { font-size:0.94rem; }
+        .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:18px; }
+        .item { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(15,23,42,0.06); position: relative; }
+        .item::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1.5" fill="%23005bff" opacity="0.05"/></svg>'); background-size: 60px 60px; pointer-events: none; opacity: 0.3; z-index: 0; }
+        .item img { width:100%; height:130px; object-fit:cover; display:block; }
+        .item div { padding:6px 8px; font-size:0.8rem; text-align:center; }
+        .hint { margin-top:10px; font-size:0.85rem; color:#555; }
+        footer { background:#020617; color:#9ca3af; font-size:0.8rem; text-align:center; padding:10px 0; }
+        @media(max-width:992px){ .grid{grid-template-columns:repeat(3,minmax(0,1fr));} }
+        @media(max-width:768px){ nav ul{display:none;} .grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container nav">
+        <div class="logo-text">
+            SRP GLOBAL Pvt Ltd
+            <span>सेवा • रोज़गार • बिज़नेस ग्रोथ</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="srp[.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="tour-packages.html">Tour Packages</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <h1>Photo Gallery</h1>
+        <p>
+            Yahan par aap <strong>office, tour, bus, hotel aur event</strong> ki 8–15 high quality photos laga sakte hain.
+            Neeche maine placeholder images ke naam diye hain – aap apne real photos ke naam ke saath inhe replace kar sakte hain.
+        </p>
+
+        <div class="grid">
+            <div class="item">
+                <img src="images/office-1.jpg" alt="Office Photo 1">
+                <div>Office – Front View</div>
+            </div>
+            <div class="item">
+                <img src="images/office-2.jpg" alt="Office Photo 2">
+                <div>Office – Inside / Staff</div>
+            </div>
+            <div class="item">
+                <img src="images/tour-1.jpg" alt="Tour Photo 1">
+                <div>Domestic Tour Group</div>
+            </div>
+            <div class="item">
+                <img src="images/tour-2.jpg" alt="Tour Photo 2">
+                <div>International Tour Moment</div>
+            </div>
+            <div class="item">
+                <img src="images/bus-1.jpg" alt="Bus / Transport Photo">
+                <div>Bus / Tempo Traveller</div>
+            </div>
+            <div class="item">
+                <img src="images/hotel-1.jpg" alt="Hotel Photo">
+                <div>Hotel Lobby / Room</div>
+            </div>
+            <div class="item">
+                <img src="images/event-1.jpg" alt="Event Photo 1">
+                <div>Wedding / Event Setup</div>
+            </div>
+            <div class="item">
+                <img src="images/event-2.jpg" alt="Event Photo 2">
+                <div>Stage / Decor View</div>
+            </div>
+            <div class="item">
+                <img src="images/team-1.jpg" alt="Team Photo">
+                <div>SRP GLOBAL Team</div>
+            </div>
+            <div class="item">
+                <img src="images/client-1.jpg" alt="Client Meeting">
+                <div>Client Meeting / Discussion</div>
+            </div>
+            <div class="item">
+                <img src="images/tour-3.jpg" alt="Tour Photo 3">
+                <div>Group Enjoying Trip</div>
+            </div>
+            <div class="item">
+                <img src="images/bus-2.jpg" alt="Transport Fleet">
+                <div>Transport Fleet View</div>
+            </div>
+        </div>
+
+        <p class="hint">
+            Note: <code>images/...</code> folder aapko khud create karna hoga aur apni asli photos usme upload karni hongi.
+            File names yahi rakh sakte hain ya HTML me naam change kar sakte hain.
+        </p>
+    </div>
+</main>
+
+<footer>
+    © SRP GLOBAL Pvt Ltd – All Rights Reserved.
+</footer>
+</body>
+</html>
