@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRP GLOBAL Pvt Ltd – Service, Employment &amp; Business Growth Platform</title>
+    <meta name="description" content="SRP GLOBAL Pvt Ltd is an Indian multi-service company offering domestic and international tours &amp; travel, event solutions, wedding planning, transport, manpower job services and IIBND business networking support.">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background-color: #f5f7ff;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 91, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(255, 204, 51, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(230, 57, 70, 0.02) 0%, transparent 70%);
+            background-attachment: fixed;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background: linear-gradient(135deg, #003c8f, #005bff 50%, #ff4b5c);
+            color: #fff;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .logo-text span {
+            font-weight: 400;
+            font-size: 0.85rem;
+            display: block;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 16px;
+            font-size: 0.9rem;
+        }
+
+        nav li a {
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+
+        nav li a:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #003c8f, #005bff 50%, #ff4b5c);
+            color: #fff;
+            padding: 56px 0 40px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+            gap: 32px;
+            align-items: center;
+        }
+
+        .hero-photos {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .hero-photo {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.22);
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ffcc33;
+            color: #003366;
+            border-radius: 999px;
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .hero-highlight {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.18);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            border-left: 3px solid #ffcc33;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-primary,
+        .btn-outline {
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            border: 1px solid #fff;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-primary {
+            background: #e63946;
+            color: #fff;
+            border-color: #ffccd2;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #ffcc33;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 16px;
+            font-size: 0.9rem;
+        }
+
+        .hero-card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .hero-card li + li {
+            margin-top: 4px;
+        }
+
+        section {
+            padding: 36px 0;
+            position: relative;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1.5" fill="%23005bff" opacity="0.08"/></svg>');
+            background-size: 60px 60px;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+            color: #004aad;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: #222;
+        }
+
+        .card h4 {
+            font-size: 0.96rem;
+            margin: 10px 0 6px;
+            color: #004aad;
+        }
+
+        .card p,
+        .card li {
+            font-size: 0.9rem;
+        }
+
+        .card ul {
+            margin-left: 16px;
+        }
+
+        .card ul li {
+            margin-bottom: 4px;
+        }
+
+        .tagline-box {
+            background: #ffffff;
+            border-left: 4px solid #ffcc33;
+            border-radius: 8px;
+            padding: 14px 16px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .chip {
+            background: #fff4cc;
+            color: #b36b00;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 204, 51, 0.7);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .highlight {
+            color: #004aad;
+            font-weight: 600;
+        }
+
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .pill {
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: #fff7d6;
+            font-size: 0.78rem;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .timeline-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 0.85rem;
+            border-left: 3px solid #004aad;
+        }
+
+        .timeline-item strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .benefit {
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 0.88rem;
+        }
+
+        .benefit strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #e63946;
+        }
+
+        .quote-box {
+            background: #fff;
+            border-radius: 10px;
+            padding: 14px 16px;
+            font-size: 0.9rem;
+            border-left: 4px solid #ffcc33;
+        }
+
+        .ready-line {
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .contact {
+            background: #0f172a;
+            color: #e5e7eb;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 24px;
+        }
+
+        .contact h3 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .contact p,
+        .contact li {
+            font-size: 0.9rem;
+        }
+
+        .contact ul {
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        .contact li + li {
+            margin-top: 4px;
+        }
+
+        footer {
+            background: #020617;
+            color: #9ca3af;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Animations & hover effects for tour & travel style */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), transparent 55%),
+                radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.25), transparent 55%);
+            opacity: 0.95;
+            pointer-events: none;
+        }
+
+        .hero > .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-grid > div,
+        .hero-card,
+        .card,
+        .benefit,
+        .timeline-item {
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .hero-grid > div:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .card,
+        .hero-card,
+        .benefit {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .card:hover,
+        .hero-card:hover,
+        .benefit:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(15, 23, 42, 0.18);
+        }
+
+        .btn-primary,
+        .btn-outline {
+            transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid,
+            .two-column,
+            .services-grid,
+            .timeline,
+            .benefits-list,
+            .contact-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header>
+        <div class="container nav">
+            <div class="logo-text">
+                SRP GLOBAL Pvt Ltd
+                <span>Service • Employment • Business Growth</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="srp[.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tour-packages.html">Tour Packages</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="badge">SRP GLOBAL Pvt Ltd</div>
+                <h1>Domestic &amp; International Business Solutions</h1>
+                <h2>Tour | Travel | Event | Wedding | Manpower | Transport | Business Network</h2>
+                <p>
+                    One stop solution for all your domestic &amp; international travel, events, transport, manpower and business networking needs.
+                </p>
+                <div class="hero-highlight">
+                    Connecting People, Travel &amp; Business Worldwide
+                </div>
+                <div class="hero-cta">
+                    <a href="services.html" class="btn-primary">Our Services</a>
+                    <a href="contact.html" class="btn-outline">Enquiry / Partner With Us</a>
+                </div>
+            </div>
+            <div>
+                <div class="hero-photos">
+                    <div class="hero-photo">
+                        <img src="images/tour-hero-1.jpg" alt="SRP GLOBAL tour group enjoying a scenic destination">
+                    </div>
+                    <div class="hero-photo">
+                        <img src="images/tour-hero-2.jpg" alt="Airplane and travel concept for international tours">
+                    </div>
+                    <div class="hero-photo">
+                        <img src="images/hotel-hero-1.jpg" alt="Hotel lobby / room used in tour packages">
+                    </div>
+                    <div class="hero-photo">
+                        <img src="images/bus-hero-1.jpg" alt="Tour bus / tempo traveller for group travel">
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <h3>Company Snapshot</h3>
+                    <ul>
+                        <li><strong>Name:</strong> SRP GLOBAL Pvt Ltd</li>
+                        <li><strong>Nature:</strong> Indian multi-service (tour, travel, event, transport, manpower, business network)</li>
+                        <li><strong>Key Services:</strong> Tour &amp; Travel, Event &amp; Wedding, Transport, Manpower Jobs, IIBND Network</li>
+                        <li><strong>Location:</strong> District – Sant Kabir Nagar, Uttar Pradesh, India</li>
+                        <li><strong>Owner (Director):</strong> Shri Ram Preet Kannoujiya</li>
+                    </ul>
+                    <div class="chips">
+                        <span class="chip">Domestic &amp; International Tours</span>
+                        <span class="chip">Event &amp; Wedding Solutions</span>
+                        <span class="chip">Taxi &amp; Transport</span>
+                        <span class="chip">Manpower Job Services</span>
+                        <span class="chip">IIBND Business Network</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container two-column">
+            <div>
+                <h2 class="section-title">What is SRP GLOBAL Pvt Ltd?</h2>
+                <p>
+                    SRP GLOBAL Pvt Ltd is an Indian multi-service company providing domestic and international
+                    tours &amp; travel, event solutions, wedding planning, taxi &amp; transport, domestic and overseas
+                    manpower job services and IIBND – International Indian Business Network Development support.
+                </p>
+                <div class="tagline-box" style="margin-top:12px;">
+                    “SRP GLOBAL Pvt Ltd – a trusted platform for service, employment and business growth.”
+                </div>
+                <div class="pill-list">
+                    <span class="pill">Multi-Service Platform</span>
+                    <span class="pill">One-Stop Solution</span>
+                    <span class="pill">National &amp; International Network</span>
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">Location, Owner &amp; Growth</h2>
+                <div class="card">
+                    <h3>Company Location</h3>
+                    <p>
+                        📍 <strong>District – Sant Kabir Nagar, Uttar Pradesh, India</strong><br>
+                        From here the company serves clients across India and at international level.
+                    </p>
+                    <h3 style="margin-top:10px;">Company Owner</h3>
+                    <p>
+                        👨💼 <strong>Shri Ram Preet Kannoujiya</strong><br>
+                        Leading the company with clear vision, strong planning and a growing network.
+                    </p>
+                    <h3 style="margin-top:12px;">Foundation &amp; Registration</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <strong>🧱 Foundation Day</strong>
+                            26 January 2025
+                        </div>
+                        <div class="timeline-item">
+                            <strong>📜 Registration / License</strong>
+                            30 September 2025
+                        </div>
+                    </div>
+                    <p style="margin-top:8px; font-size:0.9rem;">
+                        👉 Fast growth in a short time – proof of hard work, right planning and customer trust.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Key Services of SRP GLOBAL Pvt Ltd</h2>
+            <p class="section-subtitle">
+                All major services on one platform – tours &amp; travel, events &amp; weddings, transport, manpower job services and international business networking.
+            </p>
+            <div class="services-grid">
+                <!-- Tour & Travel -->
+                <div class="card">
+                    <h3>✈️ Domestic &amp; International Tours &amp; Travel</h3>
+                    <p>
+                        Religious yatra, family holiday, honeymoon or group tour – customised packages as per your need.
+                    </p>
+                    <h4>Includes:</h4>
+                    <ul>
+                        <li>Train / bus / flight ticket booking support</li>
+                        <li>2★ to 5★ hotel booking</li>
+                        <li>Personalised tour itineraries</li>
+                        <li>Domestic &amp; international travel planning</li>
+                    </ul>
+                </div>
+
+                <!-- Event & Wedding -->
+                <div class="card">
+                    <h3>🎉 Event Solutions &amp; Wedding Planner</h3>
+                    <p>
+                        Professional management for every type of event – from small functions to large scale weddings.
+                    </p>
+                    <h4>Event Categories:</h4>
+                    <ul>
+                        <li>Wedding &amp; reception</li>
+                        <li>Birthday &amp; anniversary</li>
+                        <li>Corporate meeting / seminar</li>
+                        <li>Hotel / banquet hall booking</li>
+                    </ul>
+                </div>
+
+                <!-- Transport -->
+                <div class="card">
+                    <h3>🚕 Taxi, Cab &amp; Transport</h3>
+                    <p>
+                        Safe, on-time and reliable transport solutions for personal as well as corporate requirements.
+                    </p>
+                    <h4>Services:</h4>
+                    <ul>
+                        <li>Local &amp; outstation cabs</li>
+                        <li>Tempo traveller</li>
+                        <li>Bus / Volvo bookings</li>
+                        <li>Goods transport (logistics)</li>
+                    </ul>
+                </div>
+
+                <!-- Manpower -->
+                <div class="card">
+                    <h3>👷 Domestic &amp; International Manpower Job Services</h3>
+                    <p>
+                        Better job opportunities for skilled and semi‑skilled manpower in India and abroad.
+                    </p>
+                    <h4>Focus Sectors:</h4>
+                    <ul>
+                        <li>Hotel &amp; hospitality staff</li>
+                        <li>Event &amp; management staff</li>
+                        <li>Sales &amp; field staff</li>
+                        <li>Other domestic &amp; international placements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IIBND Section -->
+    <section id="iibnd">
+        <div class="container two-column">
+            <div>
+                <h2 class="section-title">IIBND – International Indian Business Network Development</h2>
+                <p>
+                    IIBND is an international Indian business networking platform through which small, medium and large
+                    businesses connect with each other in India and abroad and discover new opportunities.
+                </p>
+                <div class="card" style="margin-top:10px;">
+                    <h3>What You Get via IIBND?</h3>
+                    <ul>
+                        <li>Connection between small, medium and large businesses</li>
+                        <li>Support to find dealers, distributors, franchisees and partners</li>
+                        <li>New business opportunities and marketing support</li>
+                        <li>Network expansion with Indian entrepreneurs across the world</li>
+                    </ul>
+                    <p style="margin-top:8px;">
+                        👉 Through SRP GLOBAL Pvt Ltd you get a chance to connect with the <span class="highlight">IIBND network</span>.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">Ready Introduction Line</h2>
+                <div class="quote-box">
+                    “SRP GLOBAL Pvt Ltd is an Indian multi-service company, founded on 26 January 2025 and registered on
+                    30 September 2025. The company provides tour &amp; travel, event, wedding, transport and manpower job
+                    services along with IIBND – International Indian Business Network Development – to help businesses
+                    grow at national and international level.”
+                </div>
+                <p class="ready-line">
+                    You can use this line easily while introducing the company to customers, partners or investors.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits">
+        <div class="container">
+            <h2 class="section-title">Benefits for Customers &amp; Partners</h2>
+            <p class="section-subtitle">
+                With SRP GLOBAL Pvt Ltd you do not get just services – you get trust, support and a strong platform for growth.
+            </p>
+            <div class="benefits-list">
+                <div class="benefit">
+                    <strong>Registered &amp; Trustworthy Company</strong>
+                    With proper government registration and licenses, the company works in a fully legal and organised way.
+                </div>
+                <div class="benefit">
+                    <strong>All Services at One Place</strong>
+                    Tour + Event + Job + Business Network – everything from one platform.
+                </div>
+                <div class="benefit">
+                    <strong>Transparent Pricing</strong>
+                    No hidden charges – clear pricing and transparent dealings.
+                </div>
+                <div class="benefit">
+                    <strong>24×7 Support</strong>
+                    Support whenever needed – via phone, message or online platforms.
+                </div>
+                <div class="benefit">
+                    <strong>Direct Owner Supervision</strong>
+                    Many services are directly supervised by the owner, which keeps both quality and trust strong.
+                </div>
+                <div class="benefit">
+                    <strong>Fast-Growing Network</strong>
+                    Because of IIBND and the multi-service model, the network is expanding quickly across locations.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA Section -->
+    <section id="contact" class="contact">
+        <div class="container contact-grid">
+            <div>
+                <h3>Connect with SRP GLOBAL Pvt Ltd</h3>
+                <p>
+                    Whether you are a customer, partner, dealer, distributor or job seeker – SRP GLOBAL Pvt Ltd can
+                    open a new door of service, employment and business growth for you.
+                </p>
+                <div class="tagline-box" style="margin-top:10px; background:#020617; color:#e5e7eb; border-color:#38bdf8;">
+                    “SRP GLOBAL Pvt Ltd – a trusted platform for service, employment and business growth.”
+                </div>
+            </div>
+            <div>
+                <h3>Contact Details (Update with Real Data)</h3>
+                <p style="margin-bottom:6px;">
+                    You can update the following demo details with your official company information:
+                </p>
+                <ul>
+                    <li><strong>Address:</strong> District – Sant Kabir Nagar, Uttar Pradesh, India</li>
+                    <li><strong>Mobile:</strong> +91-XXXXXXXXXX</li>
+                    <li><strong>Email:</strong> info@srpglobal.com</li>
+                    <li><strong>Website:</strong> www.srpglobal.com</li>
+                </ul>
+                <p style="margin-top:8px; font-size:0.85rem;">
+                    (Please replace the mobile, email and website above with your actual details before publishing.)
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © SRP GLOBAL Pvt Ltd – All rights reserved.
+    </footer>
+</body>
+</html>
