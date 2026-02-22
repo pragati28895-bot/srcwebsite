@@ -26,6 +26,10 @@
         .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1.5" fill="%23005bff" opacity="0.05"/></svg>'); background-size: 60px 60px; pointer-events: none; opacity: 0.3; border-radius:12px; }
         ul { margin-left:18px; margin-top:4px; }
         .badge { display:inline-block; padding:3px 8px; border-radius:999px; background:#e5f0ff; font-size:0.78rem; color:#004aad; margin-bottom:4px; }
+        .item { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(15,23,42,0.06); position: relative; }
+        .item::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1.5" fill="%23005bff" opacity="0.05"/></svg>'); background-size: 60px 60px; pointer-events: none; opacity: 0.3; z-index: 0; }
+        .item img { width:100%; height:200px; object-fit:cover; display:block; }
+        .item div { padding:6px 8px; font-size:0.8rem; text-align:center; }
         footer { background:#020617; color:#9ca3af; font-size:0.8rem; text-align:center; padding:10px 0; }
         /* Mobile Navigation - Button Style (Desktop-like experience) */
         .mobile-nav {
@@ -223,6 +227,55 @@
                     <li>Hotel category, transport mode, duration sab flexible</li>
                     <li>Family, honeymoon, student tour, senior citizen tour etc.</li>
                 </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tour Gallery Section -->
+    <div class="container">
+        <h1 style="margin-top: 30px;">Tour Gallery</h1>
+        <br>
+        
+        <div class="grid">
+            <div class="item">
+                <a href="tour1.jpeg">
+                <img src="tour1.jpeg" alt="Dubai tour 1">
+                <div>International Tour Moment</div></a>
+            </div>
+            <div class="item">
+                <a href="tour.jpeg">
+                <img src="tour.jpeg" alt="Party planning">
+                <div>Party Planning</div></a>
+            </div>
+            <div class="item">
+                <a href="tour2.jpeg">
+                <img src="tour2.jpeg" alt="Dubai tour 2">
+                <div>Domestic Tour Group</div></a>
+            </div>
+            <div class="item">
+                <a href="tour3.jpeg">
+                <img src="tour3.jpeg" alt="Tour Photo 2">
+                <div>International Tour Moment</div></a>
+            </div>
+            <div class="item">
+                <a href="tour4.jpeg">
+                <img src="tour4.jpeg" alt="Domestic Tour Photo">
+                <div>Domestic Tour</div></a>
+            </div>
+            <div class="item">
+                <a href="tour5.jpeg">
+                <img src="tour5.jpeg" alt="Tour Photo">
+                <div>Tour Photo</div></a>
+            </div>
+            <div class="item">
+                <a href="KERALA.jpeg">
+                <img src="KERALA.jpeg" alt="Kerala tour">
+                <div>Kerala Tour</div></a>
+            </div>
+            <div class="item">
+                <a href="birthday.jpeg">
+                <img src="birthday.jpeg" alt="Birthday celebration">
+                <div>Birthday Celebration</div></a>
             </div>
         </div>
     </div>
