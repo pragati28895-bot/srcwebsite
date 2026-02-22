@@ -27,14 +27,98 @@
         .name { font-weight:600; font-size:0.9rem; margin-top:6px; }
         .meta { font-size:0.8rem; color:#555; }
         footer { background:#020617; color:#9ca3af; font-size:0.8rem; text-align:center; padding:10px 0; }
-        @media(max-width:768px){ nav ul{display:none;} .grid{grid-template-columns:minmax(0,1fr);} }
+        /* Mobile Navigation - Button Style (Desktop-like experience) */
+        .mobile-nav {
+            display: none;
+            background: linear-gradient(135deg, #004aad, #0099ff);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 5px;
+        }
+
+        .mobile-nav li {
+            margin: 3px;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-nav a.active {
+            background: #ff4b5c;
+            border-color: #ff4b5c;
+            font-weight: 600;
+        }
+
+        /* Hide desktop nav on mobile */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: block;
+            }
+        }
+
+        /* Adjust for very small screens */
+        @media (max-width: 480px) {
+            .mobile-nav ul {
+                gap: 3px;
+            }
+            
+            .mobile-nav a {
+                padding: 6px 10px;
+                font-size: 0.7rem;
+            }
+        }
+
+        @media(max-width:768px){ 
+            nav ul{display:none;} 
+            .mobile-nav { display: block; }
+            .grid{grid-template-columns:minmax(0,1fr);}
+            .container { padding: 0 12px; }
+            header { padding: 12px 0; }
+            .logo-text { font-size: 1rem; }
+            h1 { font-size: 1.4rem; }
+            h2 { font-size: 1.1rem; }
+            .card { padding: 12px; }
+            main { padding: 24px 0 30px; }
+        }
     </style>
 </head>
 <body>
 <header>
     <div class="container nav">
         <div class="logo-text">
-            SRP GLOBAL 
+            SRP GLOBAL
             <span>सेवा • रोज़गार • बिज़नेस ग्रोथ</span>
         </div>
         <nav>
@@ -54,6 +138,22 @@
     </div>
 </header>
 
+<!-- Mobile Navigation (Button Style) -->
+<nav class="mobile-nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="tour-packages.html">Tours</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="why-choose-us.html">Why Us</a></li>
+        <li><a href="testimonials.html" class="active">Reviews</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Policy</a></li>
+    </ul>
+</nav>
+
 <main>
     <div class="container">
         <h1>Client Testimonials</h1>
@@ -63,7 +163,7 @@
             <div class="card">
                 <h2>“Hamari family tour bahut smooth rahi”</h2>
                 <p>
-                    “SRP GLOBAL ne hamara domestic family tour fully manage kiya – train ticket se lekar hotel
+                    “SRP GLOBAL  ne hamara domestic family tour fully manage kiya – train ticket se lekar hotel
                     aur local sightseeing tak sab kuch time par aur planned tha. Pricing clear thi, koi hidden charge nahi tha.”
                 </p>
                 <div class="name">Rahul Sharma</div>
@@ -104,8 +204,39 @@
 </main>
 
 <footer>
-    © SRP GLOBAL  – All Rights Reserved.
+    © SRP GLOBAL – All Rights Reserved.
 </footer>
+
+<script>
+    // Mobile Navigation Active State Management
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set active state for current page
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+        
+        mobileNavLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
-
