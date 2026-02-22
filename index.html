@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SRP GLOBAL – Service, Employment &amp; Business Growth Platform</title>
-    <meta name="description" content="SRP GLOBAL Pvt Ltd is an Indian multi-service company offering domestic and international tours &amp; travel, event solutions, wedding planning, transport, manpower job services and IIBND business networking support.">
+    <meta name="description" content="SRP GLOBAL is an Indian multi-service company offering domestic and international tours &amp; travel, event solutions, wedding planning, transport, manpower job services and IIBND business networking support.">
     <style>
         * {
             box-sizing: border-box;
@@ -211,8 +211,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image:
-                url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1.5" fill="%23005bff" opacity="0.08"/></svg>');
+            background-image: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1.5" fill="%23005bff" opacity="0.08"/></svg>');
             background-size: 60px 60px;
             pointer-events: none;
             opacity: 0.5;
@@ -484,6 +483,79 @@
             }
         }
 
+        /* Mobile Navigation - Button Style (Desktop-like experience) */
+        .mobile-nav {
+            display: none;
+            background: linear-gradient(135deg, #003c8f, #005bff);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 5px;
+        }
+
+        .mobile-nav li {
+            margin: 3px;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-nav a.active {
+            background: #ff4b5c;
+            border-color: #ff4b5c;
+            font-weight: 600;
+        }
+
+        /* Hide desktop nav on mobile */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: block;
+            }
+        }
+
+        /* Adjust for very small screens */
+        @media (max-width: 480px) {
+            .mobile-nav ul {
+                gap: 3px;
+            }
+            
+            .mobile-nav a {
+                padding: 6px 10px;
+                font-size: 0.7rem;
+            }
+        }
+        /* Enhanced Mobile Responsiveness */
         @media (max-width: 768px) {
             .hero-grid,
             .two-column,
@@ -498,8 +570,98 @@
                 display: none;
             }
 
+            .mobile-menu-btn {
+                display: block;
+            }
+
             .hero {
                 padding-top: 40px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+
+            .hero h2 {
+                font-size: 1rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .card {
+                padding: 12px;
+            }
+
+            .btn-primary,
+            .btn-outline {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+
+            header {
+                padding: 12px 0;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            section {
+                padding: 24px 0;
+            }
+        }
+
+        /* Tablet Optimization */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Large Mobile Devices */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .hero-grid {
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.3rem;
+            }
+            
+            .hero h2 {
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.1rem;
+            }
+            
+            .card {
+                padding: 10px;
             }
         }
     </style>
@@ -529,6 +691,22 @@
             </nav>
         </div>
     </header>
+    
+    <!-- Mobile Navigation (Button Style) -->
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="tour-packages.html">Tours</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="why-choose-us.html">Why Us</a></li>
+            <li><a href="testimonials.html">Reviews</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy-policy.html">Policy</a></li>
+        </ul>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -566,7 +744,7 @@
                 <div class="hero-card">
                     <h3>Company Snapshot</h3>
                     <ul>
-                        <li><strong>Name:</strong> SRP GLOBAL Pvt Ltd</li>
+                        <li><strong>Name:</strong> SRP GLOBAL</li>
                         <li><strong>Nature:</strong> Indian multi-service (tour, travel, event, transport, manpower, business network)</li>
                         <li><strong>Key Services:</strong> Tour &amp; Travel, Event &amp; Wedding, Transport, Manpower Jobs, IIBND Network</li>
                         <li><strong>Location:</strong> District – Sant Kabir Nagar, Uttar Pradesh, India</li>
@@ -588,14 +766,14 @@
     <section id="about">
         <div class="container two-column">
             <div>
-                <h2 class="section-title">What is SRP GLOBAL Pvt Ltd?</h2>
+                <h2 class="section-title">What is SRP GLOBAL?</h2>
                 <p>
-                    SRP GLOBAL Pvt Ltd is an Indian multi-service company providing domestic and international
+                    SRP GLOBAL is an Indian multi-service company providing domestic and international
                     tours &amp; travel, event solutions, wedding planning, taxi &amp; transport, domestic and overseas
                     manpower job services and IIBND – International Indian Business Network Development support.
                 </p>
                 <div class="tagline-box" style="margin-top:12px;">
-                    “SRP GLOBAL Pvt Ltd – a trusted platform for service, employment and business growth.”
+                    “SRP GLOBAL – a trusted platform for service, employment and business growth.”
                 </div>
                 <div class="pill-list">
                     <span class="pill">Multi-Service Platform</span>
@@ -638,7 +816,7 @@
     <!-- Services Section -->
     <section id="services">
         <div class="container">
-            <h2 class="section-title">Key Services of SRP GLOBAL Pvt Ltd</h2>
+            <h2 class="section-title">Key Services of SRP GLOBAL</h2>
             <p class="section-subtitle">
                 All major services on one platform – tours &amp; travel, events &amp; weddings, transport, manpower job services and international business networking.
             </p>
@@ -724,14 +902,14 @@
                         <li>Network expansion with Indian entrepreneurs across the world</li>
                     </ul>
                     <p style="margin-top:8px;">
-                        👉 Through SRP GLOBAL Pvt Ltd you get a chance to connect with the <span class="highlight">IIBND network</span>.
+                        👉 Through SRP GLOBAL you get a chance to connect with the <span class="highlight">IIBND network</span>.
                     </p>
                 </div>
             </div>
             <div>
                 <h2 class="section-title">Ready Introduction Line</h2>
                 <div class="quote-box">
-                    “SRP GLOBAL Pvt Ltd is an Indian multi-service company, founded on 26 January 2025 and registered on
+                    “SRP GLOBAL is an Indian multi-service company, founded on 26 January 2025 and registered on
                     30 September 2025. The company provides tour &amp; travel, event, wedding, transport and manpower job
                     services along with IIBND – International Indian Business Network Development – to help businesses
                     grow at national and international level.”
@@ -746,7 +924,7 @@
         <div class="container">
             <h2 class="section-title">Benefits for Customers &amp; Partners</h2>
             <p class="section-subtitle">
-                With SRP GLOBAL Pvt Ltd you do not get just services – you get trust, support and a strong platform for growth.
+                With SRP GLOBAL you do not get just services – you get trust, support and a strong platform for growth.
             </p>
             <div class="benefits-list">
                 <div class="benefit">
@@ -781,13 +959,13 @@
     <section id="contact" class="contact">
         <div class="container contact-grid">
             <div>
-                <h3>Connect with SRP GLOBAL Pvt Ltd</h3>
+                <h3>Connect with SRP GLOBAL</h3>
                 <p>
-                    Whether you are a customer, partner, dealer, distributor or job seeker – SRP GLOBAL Pvt Ltd can
+                    Whether you are a customer, partner, dealer, distributor or job seeker – SRP GLOBAL can
                     open a new door of service, employment and business growth for you.
                 </p>
                 <div class="tagline-box" style="margin-top:10px; background:#020617; color:#e5e7eb; border-color:#38bdf8;">
-                    “SRP GLOBAL Pvt Ltd – a trusted platform for service, employment and business growth.”
+                    “SRP GLOBAL – a trusted platform for service, employment and business growth.”
                 </div>
             </div>
             <div>
@@ -807,8 +985,39 @@
     </section>
 
     <footer>
-        © SRP GLOBAL Pvt Ltd – All rights reserved.
+        © SRP GLOBAL – All rights reserved.
     </footer>
+    
+    <script>
+        // Mobile Navigation Active State Management
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set active state for current page
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+            
+            mobileNavLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
