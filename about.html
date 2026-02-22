@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us – SRP GLOBAL </title>
-    <meta name="description" content="About SRP GLOBAL Pvt Ltd – Indian multi-service company for tours, events, transport, manpower and IIBND business network.">
+    <meta name="description" content="About SRP GLOBAL – Indian multi-service company for tours, events, transport, manpower and IIBND business network.">
     <style>
         * { box-sizing:border-box; margin:0; padding:0; }
         body { font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.6; color:#222; background:#f4f4f8; background-image: radial-gradient(circle at 10% 20%, rgba(0, 91, 255, 0.03) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba(255, 204, 51, 0.04) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(230, 57, 70, 0.02) 0%, transparent 70%); background-attachment: fixed; }
@@ -27,7 +27,97 @@
         .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
         .pill { padding:4px 10px; border-radius:999px; background:#e5f0ff; font-size:0.8rem; color:#004aad; }
         footer { background:#020617; color:#9ca3af; font-size:0.8rem; text-align:center; padding:10px 0; }
-        @media(max-width:768px){ nav ul{display:none;} }
+        /* Mobile Navigation - Button Style (Desktop-like experience) */
+        .mobile-nav {
+            display: none;
+            background: linear-gradient(135deg, #004aad, #0099ff);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 5px;
+        }
+
+        .mobile-nav li {
+            margin: 3px;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-nav a.active {
+            background: #ff4b5c;
+            border-color: #ff4b5c;
+            font-weight: 600;
+        }
+
+        /* Hide desktop nav on mobile */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: block;
+            }
+        }
+
+        /* Adjust for very small screens */
+        @media (max-width: 480px) {
+            .mobile-nav ul {
+                gap: 3px;
+            }
+            
+            .mobile-nav a {
+                padding: 6px 10px;
+                font-size: 0.7rem;
+            }
+        }
+
+        @media(max-width:768px){ 
+            nav ul{display:none;} 
+            .mobile-menu-btn { display: block; }
+            .container { padding: 0 12px; }
+            header { padding: 12px 0; }
+            .logo-text { font-size: 1rem; }
+            h1 { font-size: 1.4rem; }
+            h2 { font-size: 1.1rem; }
+            .card { padding: 12px; }
+            main { padding: 24px 0 30px; }
+        }
+        
+        @media(max-width:480px) {
+            h1 { font-size: 1.2rem; }
+            h2 { font-size: 1rem; }
+            .card { padding: 10px; }
+            .logo-text { font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
@@ -53,6 +143,22 @@
         </nav>
     </div>
 </header>
+
+<!-- Mobile Navigation (Button Style) -->
+<nav class="mobile-nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="tour-packages.html">Tours</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="why-choose-us.html">Why Us</a></li>
+        <li><a href="testimonials.html">Reviews</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Policy</a></li>
+    </ul>
+</nav>
 
 <main>
     <div class="container">
@@ -104,7 +210,7 @@
             <p><strong>Vision:</strong> India ke har sheher aur international level par logon ko ek aisa trusted platform dena
                 jahan <em>service + rozgaar + business growth</em> teenon ek hi छत के नीचे mil saken.</p>
             <p><strong>Mission:</strong> Transparent pricing, quality service, aur strong Indian business network ke through
-                SRP GLOBAL Pvt Ltd ko multi-service industry ka reliable naam banana.</p>
+                SRP GLOBAL ko multi-service industry ka reliable naam banana.</p>
             <div class="pill-row">
                 <span class="pill">Service First</span>
                 <span class="pill">Employment Support</span>
@@ -117,5 +223,37 @@
 <footer>
     © SRP GLOBAL – All Rights Reserved.
 </footer>
+
+<script>
+    // Mobile Navigation Active State Management
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set active state for current page
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+        
+        mobileNavLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
