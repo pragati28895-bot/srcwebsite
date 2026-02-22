@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ – SRP GLOBAL</title>
+    <title>FAQ – SRP GLOBAL </title>
     <meta name="description" content="Frequently asked questions about SRP GLOBAL Pvt Ltd tours, events, transport, manpower services and IIBND network.">
     <style>
         * { box-sizing:border-box; margin:0; padding:0; }
@@ -27,6 +27,78 @@
         .a { margin-top:4px; }
         footer { background:#020617; color:#9ca3af; font-size:0.8rem; text-align:center; padding:10px 0; }
         @media(max-width:768px){ nav ul{display:none;} }
+        /* Mobile Navigation - Button Style (Desktop-like experience) */
+        .mobile-nav {
+            display: none;
+            background: linear-gradient(135deg, #004aad, #0099ff);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 5px;
+        }
+
+        .mobile-nav li {
+            margin: 3px;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-nav a.active {
+            background: #ff4b5c;
+            border-color: #ff4b5c;
+            font-weight: 600;
+        }
+
+        /* Hide desktop nav on mobile */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: block;
+            }
+        }
+
+        /* Adjust for very small screens */
+        @media (max-width: 480px) {
+            .mobile-nav ul {
+                gap: 3px;
+            }
+            
+            .mobile-nav a {
+                padding: 6px 10px;
+                font-size: 0.7rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -53,13 +125,29 @@
     </div>
 </header>
 
+<!-- Mobile Navigation (Button Style) -->
+<nav class="mobile-nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="tour-packages.html">Tours</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="why-choose-us.html">Why Us</a></li>
+        <li><a href="testimonials.html">Reviews</a></li>
+        <li><a href="faq.html" class="active">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Policy</a></li>
+    </ul>
+</nav>
+
 <main>
     <div class="container">
         <h1>Frequently Asked Questions (FAQ)</h1>
 
         <div class="qa">
             <div class="q">Q. SRP GLOBAL  ka main kaam kya hai?</div>
-            <div class="a">A. SRP GLOBAL  ek Indian multi-service company hai jo tour &amp; travel, event &amp; wedding,
+            <div class="a">A. SRP GLOBAL ek Indian multi-service company hai jo tour &amp; travel, event &amp; wedding,
                 transport, manpower job services aur IIBND business network provide karti hai.</div>
         </div>
 
@@ -109,8 +197,39 @@
 </main>
 
 <footer>
-    © SRP GLOBAL  – All Rights Reserved.
+    © SRP GLOBAL – All Rights Reserved.
 </footer>
+
+<script>
+    // Mobile Navigation Active State Management
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set active state for current page
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+        
+        mobileNavLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
-
