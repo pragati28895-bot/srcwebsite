@@ -25,6 +25,12 @@
         .card { background:#fff; border-radius:12px; padding:14px 16px; box-shadow:0 4px 16px rgba(15,23,42,0.06); position: relative; }
         .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1.5" fill="%23005bff" opacity="0.05"/></svg>'); background-size: 60px 60px; pointer-events: none; opacity: 0.3; border-radius:12px; }
         .name { font-weight:600; font-size:0.9rem; margin-top:6px; }
+        /*images*/
+        .item { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(15,23,42,0.06); position: relative; }
+        .item::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1.5" fill="%23005bff" opacity="0.05"/></svg>'); background-size: 60px 60px; pointer-events: none; opacity: 0.3; z-index: 0; }
+        .item img { width:100%; height:200px; object-fit:cover; display:block; }
+        .item div { padding:6px 8px; font-size:0.8rem; text-align:center; }
+        /*end images*/
         .meta { font-size:0.8rem; color:#555; }
         footer { background:#020617; color:#9ca3af; font-size:0.8rem; text-align:center; padding:10px 0; }
         /* Mobile Navigation - Button Style (Desktop-like experience) */
@@ -199,6 +205,19 @@
                 <div class="name">Mohammad Imran</div>
                 <div class="meta">Hospitality Staff – Overseas Placement</div>
             </div>
+
+
+
+
+
+
+            
+            <!-- Gallery Items -->
+            <div class="item">
+                <a href="srp image/tour1.jpeg">
+                <img src="srp image/tour1.jpeg" alt="Dubai tour 1">
+                <div>International Tour Moment</div></a>
+            </div>
         </div>
     </div>
 </main>
@@ -240,3 +259,4 @@
 </script>
 </body>
 </html>
+
